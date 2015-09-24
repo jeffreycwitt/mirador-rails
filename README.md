@@ -1,38 +1,60 @@
 # Mirador::Rails
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mirador/rails`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a gem to support seamless integration of mirador.js into a rails application.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'mirador-rails'
+	gem 'mirador-rails', :git => "https://github.com/jeffreycwitt/mirador-rails.git"
+
+```
+
+Eventually you will be able to install from rubygems.org with 
+
+```
+    gem 'mirador-rails'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install mirador-rails
 
 ## Usage
 
-TODO: Write usage instructions here
+Basically, this gem will add the required .js and .css files to your rails-asset-pipeline.
 
-## Development
+Since this gem is still in development, at the present, one still needs to add the fonts and images directory from the mirador repo [http://github.com/iiif/mirador](http://github.com/iiif/mirador) directly to your rails `public` directory. We are working to remove this step.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Once installed you can then create a mirador object in your own javascript like so:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+In `app/assets/javascript/mirador-custom.js`
+
+    $(function(){
+			Mirador({
+				"id": "viewer",
+				"layout": "1x1",
+				"data": [
+					{"manifestUri": "http://scta.info/iiif/pp-sorb/manifest"}
+				]
+			});
+    });
+
+As stated in the mirador documentation, `id` should point to the element id of the `<div>` you would like mirador to appear in.
+
+So in a place like `app/views/pages/index` there should be something like this: 
+
+    <div id="viewer"><div>
+
+Please see [http://github.com/iiif/mirador](http://github.com/iiif/mirador) for further documentation of how to use and customize mirador. 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/mirador-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/jeffreycwitt/mirador-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+
+## Contributors
 
 
 ## License
