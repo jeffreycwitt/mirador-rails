@@ -26,7 +26,7 @@ And then execute:
 
 Basically, this gem will add the required .js and .css files to your rails-asset-pipeline.
 
-Since this gem is still in development, at the present, one still needs to add the fonts and images directory from the mirador repo [http://github.com/iiif/mirador](http://github.com/iiif/mirador) directly to your rails `public` directory. We are working to remove this step.
+Since this gem is still in development, at the present, one still needs to add the fonts and images directory from the mirador repo [https://github.com/iiif/mirador](https://github.com/iiif/mirador) directly to your rails `public` directory. We are working to remove this step.
 
 Once installed you can then create a mirador object in your own javascript like so:
 
@@ -48,7 +48,7 @@ So in a place like `app/views/pages/index.html.erb` there should be something li
 
     <div id="viewer"><div>
 
-Please see [http://github.com/iiif/mirador](http://github.com/iiif/mirador) for further documentation of how to use and customize mirador. 
+Please see [https://github.com/iiif/mirador](https://github.com/iiif/mirador) for further documentation of how to use and customize mirador. 
 
 ## Contributing
 
