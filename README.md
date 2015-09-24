@@ -44,7 +44,7 @@ In `app/assets/javascript/mirador-custom.js`
 
 As stated in the mirador documentation, `id` should point to the element id of the `<div>` you would like mirador to appear in.
 
-So in a place like `app/views/pages/index` there should be something like this: 
+So in a place like `app/views/pages/index.html.erb` there should be something like this: 
 
     <div id="viewer"><div>
 
